@@ -1,0 +1,11 @@
+composer create-project --prefer-dist laravel/laravel manytomany
+php artisan make:migration create_table_modalidades --create=modalidades
+php artisan make:migration create_table_professores --create=professores
+php artisan make:migration create_table_modalidades_professores --create=modalidades_professores
+php artisan migrate
+php artisan make:controller ModalidadesController --resource
+php artisan make:controller ProfessoresController --resource
+php artisan make:model Modalidade
+php artisan make:model Professor
+## Rodar no servidor
+php artisan serve
